@@ -16,16 +16,31 @@ Configuration
 The following options are present in /var/renasar/renasar-http/config.json to control the HTTP/HTTPS
 server:
 
-===========  =======  ======================================================================
-Name         Type     Description
-===========  =======  ======================================================================
-http         boolean  Toggle HTTP.
-https        boolean  Toggle HTTPS.
-httpPort     integer  Port to use for HTTP. Typically this is port 80
-httpsPort    integer  Port to use for HTTPS. Typically this is port 443.
-httpsCert    string   Filename of the X.509 certificate to use for TLS. Expected format is PEM.
-httpsKey     string   Filename of the RSA private key to use for TLS. Expected format is PEM.
-===========  =======  ======================================================================
++---------------------+---------+------------------------------------------------------------------------------------+
+| Name                |  Type   |  Description                                                                       |
++=====================+=========+====================================================================================+
+| httpEnabled         | boolean | Toggle HTTP.                                                                       |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpsEnabled        | boolean | Toggle HTTPS.                                                                      |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpBindAddress     | string  | ip/interface to bind to for HTTP. Typically this is 0.0.0.0                        |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpBindPort        | integer | Local port to use for HTTP. Typically this is port 80                              |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpsBindPort       | integer | Local port to use for HTTPS. Typically this is port 443.                           |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpsCert           | string  | Filename of the X.509 certificate to use for TLS. Expected format is PEM.          |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpsKey            | string  | Filename of the RSA private key to use for TLS. Expected format is PEM.            |
++---------------------+---------+------------------------------------------------------------------------------------+
+| apiServerAddress    | string  | The externally facing ip of the HTTP server, used by various services              |
++---------------------+---------+------------------------------------------------------------------------------------+
+| apiServerPort       | integer | The externally facing port of the HTTP server, used by various services            |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpFileServiceRoot | string  | Directory path for uploaded files to be stored on disk                             |
++---------------------+---------+------------------------------------------------------------------------------------+
+| httpFileServiceType | string  | Backend storage mechanism for file service. Currently only FileSystem is supported |
++---------------------+---------+------------------------------------------------------------------------------------+
 
 Generating Self-Signed Certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
